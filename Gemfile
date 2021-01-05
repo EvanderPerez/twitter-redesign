@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
+
+
+
+gem 'pry','~> 0.9.7.4'
+gem 'pry-nav'
 gem 'bcrypt', '~> 3.1.7'
 gem 'shoulda-matchers', '~> 4.0'
 gem 'rspec-rails', '~> 4.0.1'
