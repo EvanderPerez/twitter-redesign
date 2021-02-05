@@ -1,4 +1,44 @@
+<%= stylesheet_link_tag 'index', media: 'all' %> 
+<%# <link href="../assets/stylesheets/Index.css"  media="screen" rel="stylesheet" type="text/css" /> %>
 
 
-Cuenta creada!
-<%= @current_user.name %>
+
+<aside>
+<h1>
+	<%= "Bienvenido #{@current_user.name}  "%>
+</h1>
+
+</aside>
+<div class = "indexBody">
+	<%# <div class = "post"> %>
+	<h1>Inicio</h1>
+	<%= form_for(:post, url: :posts) do | f |  %>
+			<%= f.label :text, "Que es lo que piensas #{@current_user.name}?" %> 
+			<%= f.text_area :text %> 
+			<%= f.submit "Publicar" %>
+		<% end %>
+		<%# </div> %>
+		
+	<div class = "tweet-container">
+		<% @post_list.each do |p| %>
+		<div class = "tweet-item">
+			<h2> <%= @current_user.name %> </h2>
+			<p> <%= p.text %> </p>
+			<ul>
+			<li>test1</li>
+			<li>test2</li>
+			
+			</ul>
+
+		</div>
+	
+     	
+		<% end%>
+		
+		
+	</div>
+</div>
+
+<aside>
+<%= link_to 'logout', :delete_session, method: :delete %>
+</aside>

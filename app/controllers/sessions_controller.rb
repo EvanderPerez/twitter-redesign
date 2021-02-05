@@ -17,10 +17,18 @@ class SessionsController < ApplicationController
             render :login
         end          
     end
+
+    def destroy
+        cookies[:session_token] = nil
+        cookies[:session_id] = nil
+        render :login 
+    end
   
     private 
     def save_session(user)
         cookies[:session_token] = user.token
         cookies[:session_id] = user.id
     end
+
+  
 end

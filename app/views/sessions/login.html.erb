@@ -1,12 +1,38 @@
-<h2>Login</h2>
+ <%= stylesheet_link_tag 'login', media: 'all'%>   
+<%# <link href="/assets/stylesheets/Login.css"  media="screen" rel="stylesheet" type="text/css" /> %>
 
-<%= form_for(:login, url: :signin) do | f | %>
+<%# <%= img "tweet-logo.svg", :alt => "tweet", :class => "tweeter-logo"%>
+<div class = "LoginBody">
+<div class = "LoginFirstColumn">
 
-<%= f.label :email, "Correo electronico" %>
-<%= f.email_field :email %>
-<%= f.label :password, "password" %>
-<%= f.password_field :password %>
-<%= f.submit "Log In" %>
+  <div class = "logo">
+   <svg viewBox='0 0 24 24'><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path> </svg>
+  </div>
 
+  <ul > 
+    <li>Sigue lo que te interesa.</li>
+    <li>Entérate de qué está hablando la gente.</li>
+    <li>Únete a la conversación.</li>
+  </ul>
+
+</div>
+
+<div class="LoginForm">
+
+<h2>Bienvenido a Twitter-redesign!</h2>
+     <%= form_for(:login, url: :signin) do | f | %>
+     <%= f.label :email, "Correo electronico" %>
+     <%= f.email_field :email %>
+     
+     <%= f.label :password, "Contraseña" %>
+     <%= f.password_field :password %>
+     <%= f.submit "Log In" %>
+     <%= link_to "Registrate!", root_path %>
+
+</div>
+</div>
+<footer>
+<nav aria-label="Pie de página" role="navigation" class="css-1dbjc4n r-18u37iz r-1w6e6rj r-1777fci r-1j3t67a r-1w50u8q"><a href="https://about.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Acerca de</span></a><a href="https://help.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Centro de ayuda</span></a><a href="https://twitter.com/tos" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Condiciones de Servicio</span></a><a href="https://twitter.com/privacy" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Política de Privacidad</span></a><a href="https://support.twitter.com/articles/20170514" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Política de cookies</span></a><a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Información de anuncios</span></a><a href="https://blog.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Blog</span></a><a href="https://status.twitterstat.us" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Estado</span></a><a href="https://careers.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Empleos</span></a><a href="https://about.twitter.com/press/brand-assets" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Recursos para marcas</span></a><a href="https://ads.twitter.com/?ref=gl-tw-tw-twitter-advertise" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Publicidad</span></a><a href="https://marketing.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Marketing</span></a><a href="https://business.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Twitter para empresas</span></a><a href="https://developer.twitter.com" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Desarrolladores</span></a><a href="https://twitter.com/i/directory/profiles" target="_blank" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0" rel=" noopener noreferrer"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Guía</span></a><a href="/settings" dir="auto" role="link" data-focusable="true" class="css-4rbku5 css-18t94o4 css-901oao r-m0bqgq r-1loqt21 r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Configuración</span></a><div dir="auto" class="css-901oao r-m0bqgq r-1qd0xha r-n6v787 r-16dba41 r-1sf4r6n r-jw8lkh r-bcqeeo r-ry3cjt r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">© 2021 Twitter, Inc.</span></div></nav>
+</footer>
 
 <% end %>

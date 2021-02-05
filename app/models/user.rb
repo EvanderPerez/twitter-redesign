@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
     before_create :add_token
 
-
+    has_many :posts
 
   def create_token
     random_token = SecureRandom.urlsafe_base64
