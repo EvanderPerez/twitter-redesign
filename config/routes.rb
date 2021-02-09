@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
  delete "/index", to: "sessions#destroy", as: :delete_session
 
+ get "/profile/:id", to:"users#show", as: :profile
+
+#  get "/profile/:id", to: "posts#index"
+
 
 end

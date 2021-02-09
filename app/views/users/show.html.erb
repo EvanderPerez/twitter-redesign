@@ -1,20 +1,20 @@
 <%= stylesheet_link_tag 'index', media: 'all' %> 
-<%# <link href="../assets/stylesheets/Index.css"  media="screen" rel="stylesheet" type="text/css" /> %>
-
 
 
 <aside>
-<h1>
-<%= link_to "#{@current_user.name}", profile_path(:id => @current_user.id) %>
-	
-</h1>
+
+<%= link_to "#{@current_user.name.capitalize}", profile_path(:id => @current_user.id) %>
 
 </aside>
+
 <div class = "indexBody">
 	<%# <div class = "post"> %>
-	<h1>Inicio</h1>
+	<h1>
+     <%= "#{@current_user.name.capitalize} #{@current_user.last_name.capitalize}"%>
+     </h1>
+
 	<%= form_for(:post, url: :posts) do | f |  %>
-			<%= f.label :text, "Que es lo que piensas #{@current_user.name}?" %> 
+			<%= f.label :text, "Que es lo que piensas #{@current_user.name.capitalize}?" %> 
 			<%= f.text_area :text %> 
 			<%= f.submit "Publicar" %>
 		<% end %>
@@ -23,8 +23,8 @@
 	<div class = "tweet-container">
 		<% @post_list.each do |p| %>
 		<div class = "tweet-item">
-			<h2> <%= @current_user.name %> </h2>
-			<p> <%= p.text %> </p>
+			<h2> <%= @current_user.name.capitalize %> </h2>
+			<p> <%= p.text.capitalize %> </p>
 			<ul>
 			<li>test1</li>
 			<li>test2</li>
@@ -39,7 +39,9 @@
 		
 	</div>
 </div>
+	
 
 <aside>
 <%= link_to 'logout', :delete_session, method: :delete %>
 </aside>
+

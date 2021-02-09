@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     def create
         @user = User.find_by(email: params[:login][:email])
         if @user&.authenticate(params[:login][:password])
+            @user.change_token
             self.save_session(@user)
             @current_user = @user
             redirect_to index_path  
@@ -25,6 +26,7 @@ class SessionsController < ApplicationController
     end
   
     private 
+    
     def save_session(user)
         cookies[:session_token] = user.token
         cookies[:session_id] = user.id

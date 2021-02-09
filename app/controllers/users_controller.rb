@@ -21,6 +21,12 @@ class UsersController < ApplicationController
 
     end
 
+    def show
+        @current_user = current_user 
+        @post_list = Post.where(user_id: current_user.id)
+        render :show
+    end
+    
 
 
     private
