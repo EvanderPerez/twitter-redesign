@@ -16,6 +16,7 @@ Rails.application.routes.draw do
  get "/profile/:id", to:"users#show", as: :profile
 
 #  get "/profile/:id", to: "posts#index"
-
+post "/profile/:id/follow", to: "users#follow", as: "follow_user"
+post "/profile/:id/unfollow", to: "users#unfollow", as: "unfollow_user"
 
 end

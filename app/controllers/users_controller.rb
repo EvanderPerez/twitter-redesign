@@ -21,9 +21,25 @@ class UsersController < ApplicationController
 
     end
 
+    def follow
+        @user = User.find(params[:id])
+        current_user.followings << @user
+        redirect_back(fallback_location: users_path(@user))
+      end
+      
+      def unfollow
+        
+        
+        @user = User.find(params[:id])
+        current_user.given_follows.find_by(followed_user_id: @user.id)&.destroy
+        redirect_back(fallback_location: users_path(@user))
+      end
+
+
     def show
-        @current_user = current_user 
-        @post_list = Post.where(user_id: current_user.id)
+        @current_user = current_user
+        @profile_user = User.find_by(id: params[:id])
+        @post_list = Post.where(user_id: params[:id])
         render :show
     end
     

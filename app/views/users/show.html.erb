@@ -2,41 +2,72 @@
 
 
 <aside>
-
+<ul>
+<li>
 <%= link_to "#{@current_user.name.capitalize}", profile_path(:id => @current_user.id) %>
+</li>
+<li>
+<%= link_to "Inicio", "/index" %>
+</li>
+</ul>
+
 
 </aside>
 
 <div class = "indexBody">
 	<%# <div class = "post"> %>
-	<h1>
-     <%= "#{@current_user.name.capitalize} #{@current_user.last_name.capitalize}"%>
-     </h1>
+     <%# <img src="../assets/images/tweet-logo.png" alt=""> %>
+	<div class = "profile-logo">
+     	 <%= image_tag "no-image.png" %>
+     </div>
+	<div class= "profile-pic">
+ 		<%= image_tag "profile-pic.png" %>
+		<h1>
+     	<%= "#{@profile_user.name.capitalize} #{@profile_user.last_name.capitalize}"%>
+     	</h1>
+		<div class = "Followers">
+				<ul>
+			<li>Seguidores: </li>
+			<li>Seguidos: </li>
+		</ul>
+		
+		</div>
 
-	<%= form_for(:post, url: :posts) do | f |  %>
-			<%= f.label :text, "Que es lo que piensas #{@current_user.name.capitalize}?" %> 
+	</div>
+		<%= form_for(:post, url: :posts) do | f |  %>
+			<%= f.label :text, "Que es lo que piensas #{@profile_user.name.capitalize}?" %> 
 			<%= f.text_area :text %> 
 			<%= f.submit "Publicar" %>
-		<% end %>
-		<%# </div> %>
-		
-	<div class = "tweet-container">
-		<% @post_list.each do |p| %>
-		<div class = "tweet-item">
-			<h2> <%= @current_user.name.capitalize %> </h2>
-			<p> <%= p.text.capitalize %> </p>
-			<ul>
-			<li>test1</li>
-			<li>test2</li>
 			
-			</ul>
+		<% end %>	
+	<div class = "tweet-container">
+			<% @post_list.each do |p| %>
+		<div class = "tweet-item">
+			<h2> <%= @profile_user.name.capitalize %> </h2>
+			<p> <%= p.text.capitalize %> </p>
+				<ul>
+					<li>test1</li>
+					<li>
+					
+					
+				<section id="all-links">
+  					<% if  @current_user.id == @profile_user.id %>
+        				<%= button_to "Logout", '/logout', method: :post %>
+    					<% elsif @current_user.followings.include?(@profile_user) %>
+        				<h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
+    					<% else %>
+        				<h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
+    					<% end%>
+    				<%# <%= link_to 'Follow', follow_user_path(@profile_user) %> 
+    				<%# <%= link_to 'Unfollow', unfollow_user_path(@profile_user) %> 
+    				<br>
+				</section>
 
+
+					</li>
+				</ul>
 		</div>
-	
-     	
-		<% end%>
-		
-		
+			<% end%>
 	</div>
 </div>
 	
